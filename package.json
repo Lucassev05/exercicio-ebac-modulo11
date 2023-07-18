@@ -1,0 +1,28 @@
+{
+  "name": "exercicio-ebac-modulo11",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:open": "npx cypress open",
+    "cy": "npx cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lucassev05/exercicio-ebac-modulo11.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lucassev05/exercicio-ebac-modulo11/issues"
+  },
+  "homepage": "https://github.com/Lucassev05/exercicio-ebac-modulo11#readme",
+  "devDependencies": {
+    "cypress": "^12.17.1"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^8.0.2"
+  }
+}
