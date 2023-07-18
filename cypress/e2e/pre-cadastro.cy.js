@@ -26,5 +26,28 @@ describe("Funcionalidade: Pré-cadastro", () => {
       "contain",
       "Detalhes da conta modificados com sucesso."
     );
+
+    it("Pré-cadastrar com e-mail já cadastrado", () => {
+      cy.get("#reg_email").type("lucasebac@ebac.com");
+      cy.get("#reg_password").type("Senhateste159!");
+      cy.get("[name=register]").click();
+      cy.get(".woocommerce-error").should(
+        "contain",
+        `Erro: Uma conta já está registrada com seu endereço de e-mail. Faça login.`
+      );
+    });
+
+    it("Pré-cadastrar com e-mail em formato inválido", () => {
+      let emailInvalido = email.replace(/\.com$/, "");
+
+      cy.get("#reg_email").type(emailInvalido);
+      cy.get("#reg_password").type("Senhateste159!");
+      cy.get("[name=register]").click();
+
+      cy.get(".woocommerce-error").should(
+        "contain",
+        "Erro: Informe um endereço de e-mail válido."
+      );
+    });
   });
 });
